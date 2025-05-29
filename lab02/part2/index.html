@@ -10,8 +10,8 @@
     <h1>Planets data</h1>
 	<table class="full-table">
 	  <colgroup>
-	    <col>
-		<col>
+	    <col> <!--column 1 (no style)-->
+		<col> <!--column 2 (no style)-->
 		<col style="border: 2px solid black"></col>
 	  </colgroup>
 	  <caption>Data about the planets of our solar system (Planetary facts taken from <a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">Nasa's Planetary Fact Sheet - Metric</a>).</caption>
@@ -34,7 +34,7 @@
 	  <!-- TERRESTRIAL PLANETS -->
 	  <tbody>
 	  <tr>
-		<th colspan="2" rowspan="4" scope="row">Terrestrial planets</th>
+		<th colspan="2" rowspan="4" scope="rowgroup">Terrestrial planets</th>
 		<th scope="row">Mercury</th>
 		<td>0.330</td>
 		<td>4,879</td>
@@ -86,8 +86,8 @@
 	  <!-- JOVIAN PLANETS -->
 	  <!-- Gas giants -->
 	  <tr>
-		<th rowspan="4" scope="row">Jovian planets</th>
-		<th rowspan="2" scope="row">Gas giants</th>
+		<th rowspan="4" scope="rowgroup">Jovian planets</th>
+		<th rowspan="2" scope="rowgroup">Gas giants</th>
 		<th scope="row">Jupiter</th>
 		<td>1898</td>
 		<td>142,984</td>
@@ -113,7 +113,7 @@
 	  </tr>
 	  <!-- Ice Giants -->
 	  <tr>
-		<th rowspan="2" scope="row">Ice giants</th>
+		<th rowspan="2" scope="rowgroup">Ice giants</th>
 		<th scope="row">Uranus</th>
 		<td>86.8</td>
 		<td>51,118</td>
