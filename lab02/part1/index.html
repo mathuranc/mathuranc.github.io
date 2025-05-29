@@ -51,8 +51,10 @@
 	  </div>
 
 	  <div class="red-panda">
-	    <!-- insert picture element -->
-		<img src = "./originals/red-panda.jpg" alt = "Red Panda - a small mammal with red fur, white ears, and black legs curled on top of tree branches">
+	    <picture>
+		  <source media="(min-width:600px)" srcset="./originals/red-panda-1200.jpg">
+		  <img src="./originals/red-panda-400.jpg" alt = "Red Panda - a small mammal with red fur, white ears, and black legs curled on top of tree branches" style="width:auto;">
+		</picture>
 	  </div>
 	</main>
   </body>
