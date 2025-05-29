@@ -9,28 +9,33 @@
   <body>
     <h1>Planets data</h1>
 	<table class="full-table">
+	  <colgroup>
+	    <col>
+		<col>
+		<col style="border: 2px solid black"></col>
+	  </colgroup>
 	  <caption>Data about the planets of our solar system (Planetary facts taken from <a href="http://nssdc.gsfc.nasa.gov/planetary/factsheet/">Nasa's Planetary Fact Sheet - Metric</a>).</caption>
 	  <!-- HEADINGS -->
 	  <thead>
 		<tr>
 		  <td colspan="2"></td>
-		  <th class="border-top">Name</th>
-		  <th>Mass (10<sup>24</sup>kg)</th>
-		  <th>Diameter (km)</th>
-		  <th>Density (kg/m<sup>3</sup>)</th>
-		  <th>Gravity (m/s<sup>2</sup>)</th>
-		  <th>Length of day (hours)</th>
-		  <th>Distance from Sun (10<sup>6</sup>km)</th>
-		  <th>Mean temperature (°C)</th>
-		  <th>Number of moons</th>
-		  <th>Notes</th>
+		  <th scope="col">Name</th>
+		  <th scope="col">Mass (10<sup>24</sup>kg)</th>
+		  <th scope="col">Diameter (km)</th>
+		  <th scope="col">Density (kg/m<sup>3</sup>)</th>
+		  <th scope="col">Gravity (m/s<sup>2</sup>)</th>
+		  <th scope="col">Length of day (hours)</th>
+		  <th scope="col">Distance from Sun (10<sup>6</sup>km)</th>
+		  <th scope="col">Mean temperature (°C)</th>
+		  <th scope="col">Number of moons</th>
+		  <th scope="col">Notes</th>
 	    </tr>
 	  </thead>
 	  <!-- TERRESTRIAL PLANETS -->
 	  <tbody>
 	  <tr>
-		<th colspan="2" rowspan="4">Terrestrial planets</th>
-		<th class="border-middle">Mercury</th>
+		<th colspan="2" rowspan="4" scope="row">Terrestrial planets</th>
+		<th scope="row">Mercury</th>
 		<td>0.330</td>
 		<td>4,879</td>
 		<td>5427</td>
@@ -42,7 +47,7 @@
 		<td>Closest to the Sun</td>
 	  </tr>
 	  <tr>
-		<th class="border-middle">Venus</th>
+		<th scope="row">Venus</th>
 		<td>4.87</td>
 		<td>12,104</td>
 		<td>5243</td>
@@ -54,7 +59,7 @@
 		<td></td>
 	  </tr>
 	  <tr>
-		<th class="border-middle">Earth</th>
+		<th scope="row">Earth</th>
 		<td>5.97</td>
 		<td>12,756</td>
 		<td>5514</td>
@@ -66,7 +71,7 @@
 		<td>Our world</td>
 	  </tr>
 	  <tr>
-		<th class="border-middle">Mars</th>
+		<th scope="row">Mars</th>
 		<td>0.642</td>
 		<td>6,792</td>
 		<td>3933</td>
@@ -81,9 +86,9 @@
 	  <!-- JOVIAN PLANETS -->
 	  <!-- Gas giants -->
 	  <tr>
-		<th rowspan="4">Jovian planets</th>
-		<th rowspan="2">Gas giants</th>
-		<th class="border-middle">Jupiter</th>
+		<th rowspan="4" scope="row">Jovian planets</th>
+		<th rowspan="2" scope="row">Gas giants</th>
+		<th scope="row">Jupiter</th>
 		<td>1898</td>
 		<td>142,984</td>
 		<td>1326</td>
@@ -95,7 +100,7 @@
 		<td>The largest planet</td>
 	  </tr>
 	  <tr>
-		<th class="border-middle">Saturn</th>
+		<th scope="row">Saturn</th>
 		<td>568</td>
 		<td>120,536</td>
 		<td>687</td>
@@ -108,8 +113,8 @@
 	  </tr>
 	  <!-- Ice Giants -->
 	  <tr>
-		<th rowspan="2">Ice giants</th>
-		<th class="border-middle">Uranus</th>
+		<th rowspan="2" scope="row">Ice giants</th>
+		<th scope="row">Uranus</th>
 		<td>86.8</td>
 		<td>51,118</td>
 		<td>1271</td>
@@ -121,7 +126,7 @@
 		<td></td>
 	  </tr>
 	  <tr>
-		<th class="border-middle">Neptune</th>
+		<th scope="row">Neptune</th>
 		<td>102</td>
 		<td>49,528</td>
 		<td>1638</td>
@@ -135,8 +140,8 @@
 	  
 	  <!-- DWARF PLANETS -->
 	  <tr>
-		<th colspan="2">Dwarf planets</th>
-		<th class="border-bottom">Pluto</th>
+		<th colspan="2" scope="row">Dwarf planets</th>
+		<th scope="row">Pluto</th>
 		<td>0.0146</td>
 		<td>2,370</td>
 		<td>2095</td>
