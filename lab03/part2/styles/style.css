@@ -3,5 +3,6 @@ html {
 }
 
 div{
+  background-color: red;
   border-style: groove
 }
