@@ -2,7 +2,8 @@ html {
   font-family: sans-serif;
 }
 
-div{
-  background-color: red;
-  border-style: groove
+.box {
+  width: 200px;
+  height: 100px;
+  border: groove 
 }
