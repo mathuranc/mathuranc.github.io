@@ -5,5 +5,7 @@ html {
 .box {
   width: 200px;
   height: 100px;
-  border: groove 
+  border: groove ;
+  
+  background-color: red;
 }
