@@ -2,6 +2,9 @@ html {
   font-family: sans-serif;
 }
 
+div {
+  color: white;
+}
 .box {
   width: 200px;
   height: 100px;
