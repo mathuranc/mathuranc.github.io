@@ -27,3 +27,14 @@ a:visited {
 a:hover {
   text-decoration: none;
 }
+
+ul {
+	padding-top: 20px;
+	padding-bottom:20px;
+	background-color: #eeeeee;
+	border: 5px solid purple
+}
+
+li {
+	padding-bottom: 5px
+}
