@@ -10,10 +10,18 @@ div {
   font-size: 18px;
   text-shadow: 1px 1px black;
 }
+
 .box {
   width: 200px;
   height: 100px;
   border: 1px solid #8f1111;
   border-radius: 10px;
-  background-color: #db0100;
+  background-color: red;
+  
+  background-image: linear-gradient(
+    to bottom right, 
+	rgba(0, 0, 0, 0) 0%, 
+	rgba(0, 0, 0, 0.2) 30%, 
+	rgba(0, 0, 0, 0.2) 100%
+  );
 }
