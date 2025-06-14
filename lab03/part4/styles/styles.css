@@ -45,6 +45,10 @@ body {
     padding: 0.5em 8em;
   }
   
+  article {
+	text-wrap: left;
+  }
+  
   .photos {
     list-style: none;
     margin: 0;
@@ -53,4 +57,7 @@ body {
 
   .feature {
       width: 200px;
+	  float: left;
+	  margin-right: 15px; 
   }
+  
