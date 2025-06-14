@@ -32,12 +32,14 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
+	display: flex;
+	justify-content: center;
   }
   
   nav a {
     color: #fff;
     text-decoration: none;
-    padding: .5em 1em;
+    padding: 0.5em 8em;
   }
   
   .photos {
