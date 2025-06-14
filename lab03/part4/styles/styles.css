@@ -50,11 +50,17 @@ body {
 	text-wrap: left;
   }
   
+  aside {
+	margin-left: 15px;
+  }
   .photos {
     list-style: none;
     margin: 0;
     padding: 0;
-	display: inline;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 1px;
+	row-gap: 1px
   }
 
   .feature {
