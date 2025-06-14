@@ -1,4 +1,4 @@
-/* Fonts */
+/* fonts */
 @font-face {
 	font-family: Sansation;
 	src: url('../fonts/SansationLight.woff');
@@ -13,18 +13,19 @@
 * {
   font-family: Sansation;
 }
+
+/* general layout */
 body {
   margin: 0 auto;
   min-width: 1000px;
   max-width: 1400px;
   
-  /* part of General text styling */
+  /* part of general text styling */
   line-height: 1.6; 
   letter-spacing: 0.5px;
 }
 
-/* Layout */
-
+/* layout */
 section {
   float: left;
   width: 50%;
@@ -49,13 +50,12 @@ header, section, aside, nav, footer {
 }
 
 /* header and footer */
-
 header, footer {
   border-top: 5px solid #a66;
   border-bottom: 5px solid #a66;
 }
 
-/* General text styling */
+/* general text styling */
 html {
   font-size: 10px;
 }
@@ -75,10 +75,41 @@ h2 + p {
   text-indent: 20px;
 }
 
+/* links */
+a {
+  outline: none;
+}
+
+a[href^="http"]::after {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-left: 0.25em;
+
+  background-size: 100%;
+  background-image: url("../images/external-link-52.png");
+}
+
+a:hover {
+  color: #a66;
+}
+
+a:focus {
+  background: #DFF0D8;
+}
+
+a:active {
+  color: black;
+}
+
+a:visited {
+  color: purple;
+}
 
 
-/* Links */
 
-/* Lists */
 
-/* Navigation Menu */
+/* lists */
+
+/* navigation nenu */
