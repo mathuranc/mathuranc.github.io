@@ -1,9 +1,18 @@
-/* General setup */
-
-* {
-  box-sizing: border-box;
+/* Fonts */
+@font-face {
+	font-family: Sansation;
+	src: url('../fonts/SansationLight.woff');
 }
 
+@font-face {
+	font-family: Sansation;
+	src: url('../fonts/SansationBold.woff');
+	font-weight: bold;
+}
+
+* {
+  font-family: Sansation;
+}
 body {
   margin: 0 auto;
   min-width: 1000px;
@@ -46,9 +55,6 @@ header, footer {
   border-bottom: 5px solid #a66;
 }
 
-/* Fonts */
-
-
 /* General text styling */
 html {
   font-size: 10px;
@@ -68,6 +74,8 @@ h2 {
 h2 + p {
   text-indent: 20px;
 }
+
+
 
 /* Links */
 
