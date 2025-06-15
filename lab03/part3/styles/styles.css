@@ -15,14 +15,14 @@
 }
 
 /* general layout */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0 auto;
   min-width: 1000px;
   max-width: 1400px;
-  
-  /* part of general text styling */
-  line-height: 1.6; 
-  letter-spacing: 0.5px;
 }
 
 /* layout */
@@ -58,6 +58,11 @@ header, footer {
 /* general text styling */
 html {
   font-size: 10px;
+}
+
+body {
+  line-height: 1.6; 
+  letter-spacing: 0.5px;
 }
 
 h1 {
@@ -96,7 +101,7 @@ a:hover {
 }
 
 a:focus {
-  background: #DFF0D8;
+  background: lightgray;
 }
 
 a:active {
@@ -113,4 +118,28 @@ aside ul {
   list-style-type: square;
 }
 
-/* navigation nenu */
+/* navigation menu */
+nav ul {
+  list-style-type: none;
+  line-height: 4;
+  font-size: 20px;
+  
+}
+
+nav a {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #a66;
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+nav a:hover {
+  color: black;
+}
+
+nav a:focus {
+  background: #6aa;
+}
