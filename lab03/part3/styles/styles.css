@@ -107,9 +107,10 @@ a:visited {
   color: purple;
 }
 
-
-
-
 /* lists */
+aside ul {
+  line-height: 1.6;
+  list-style-type: square;
+}
 
 /* navigation nenu */
