@@ -4,19 +4,24 @@ html {
 
 .box {
   /*text formatting*/
-  line-height: 100px;
+  line-height: 200px;
   color: white;
   text-align: center;
   vertical-align: middle;
-  font-size: 18px;
+  font-size: 36px;
   text-shadow: 1px 1px black;
 
   /*base box formatting*/
-  width: 200px;
-  height: 100px;
+  width: 400px;
+  height: 200px;
   border: 1px solid #8f1111;
   border-radius: 10px;
   background-color: red;
+  
+  /*(horizontally) centering box*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   
   /*linear gradient*/
   background-image: linear-gradient(
