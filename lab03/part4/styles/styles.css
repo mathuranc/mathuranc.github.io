@@ -47,7 +47,7 @@ body {
   }
   
   article {
-	text-wrap: left;
+	text-wrap: pretty;
   }
   
   aside {
