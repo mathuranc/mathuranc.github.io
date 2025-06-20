@@ -23,6 +23,7 @@ img {
   max-width: 980px;
   display: grid;
   grid-template-columns: 2fr 1fr;
+  gap: 20px;
 }
   
 nav {
