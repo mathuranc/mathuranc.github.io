@@ -6,8 +6,8 @@
 }
 
 @font-face {
-	font-family: Sansation;
-	src: url('../fonts/SansationBold.woff');
+	font-family: Neutra;
+	src: url('../fonts/UTMNeutra.woff');
 	font-weight: bold;
 }
 
@@ -17,7 +17,7 @@ html {
 }
 
 h1, h2 {
-  font-family: Sansation;
+  font-family: Neutra;
   font-weight: bold;
 }
 
