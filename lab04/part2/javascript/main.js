@@ -15,6 +15,13 @@ const imageFileNames = [
 ]
 
 /* Declaring the alternative text for each image file */
+const imageAltText = [
+    "Close-up of blue human eye",
+    "Close-up of sedimentary rock formation",
+    "Close-up of purple and white flowers",
+    "Close-up of ancient Egyptian wall painting",
+    "Close-up of brown butterfly"
+]
 
 /* Looping through images */
 
