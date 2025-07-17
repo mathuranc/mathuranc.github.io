@@ -40,7 +40,28 @@ for (let i = 0; i < imageFileNames.length; i++) {
     thumbBar.appendChild(newImage);
 
     // initialize event listener to change displayed image
-    newImage.addEventListener('click', findImage);
+    newImage.addEventListener('click', changeDisplayedImage);
 }
 
 /* Wiring up the Darken/Lighten button */
+const LIGHT_MODE = "light";
+const DARK_MODE = "dark";
+/**
+ * Adds/removes darken effect on displayed
+ * @returns {void}
+ */
+function toggleOverlay() {
+    if (btn.getAttribute('class') == DARK_MODE) {
+        btn.setAttribute('class', LIGHT_MODE);
+        btn.textContent = "Lighten";
+        overlay.style.backgroundColor = "rgb(0 0 0 / 50%)";
+    }
+    else if (btn.getAttribute('class') == LIGHT_MODE) {
+        btn.setAttribute('class', DARK_MODE);
+        btn.textContent = "Darken";
+        overlay.style.backgroundColor = "rgb(0 0 0 / 0%)";
+    }
+}
+
+// initialize event listener to lighten/darken displayed image
+btn.addEventListener('click', toggleOverlay);
