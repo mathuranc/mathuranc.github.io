@@ -1,4 +1,4 @@
-// initialize global variables
+/* Declaring querySelector */
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
 
@@ -7,11 +7,11 @@ const overlay = document.querySelector('.overlay');
 
 /* Declaring the array of image filenames */
 const imageFileNames = [
-    "pic1.jpg", 
-    "pic2.jpg",
-    "pic3.jpg",          
-    "pic4.jpg", 
-    "pic5.jpg"
+    "./images/pic1.jpg", 
+    "./images/pic2.jpg",
+    "./images/pic3.jpg",          
+    "./images/pic4.jpg", 
+    "./images/pic5.jpg"
 ]
 
 /* Declaring the alternative text for each image file */
@@ -24,10 +24,13 @@ const imageAltText = [
 ]
 
 /* Looping through images */
+for (let i = 0; i < imageFileNames.length; i++) {
+    const newImage = document.createElement('img');
+    newImage.setAttribute('src', imageFileNames[i]);
+    newImage.setAttribute('alt', imageAltText[i]);
+    thumbBar.appendChild(newImage);
+}
 
-const newImage = document.createElement('img');
-newImage.setAttribute('src', xxx);
-newImage.setAttribute('alt', xxx);
-thumbBar.appendChild(newImage);
+
 
 /* Wiring up the Darken/Lighten button */
