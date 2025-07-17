@@ -14,21 +14,35 @@ function randomValueFromArray(array){
 }
 
 // initialize variables that'll act as inputs for program
-var storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:," +
+let storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:," +
                 "they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was" + 
                 "not surprised — :insertx: weighs 300 pounds, and it was a hot DynamicsCompressorNode.";
-var insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
-var insertY = ["the soup kitchen", "Disneyland", "the White House"];
-var insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"];
+let insertX = ["Willy the Goblin", "Big Daddy", "Father Christmas"];
+let insertY = ["the soup kitchen", "Disneyland", "the White House"];
+let insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk", "turned into a slug and crawled away"];
 
-// EVENT LISTENER
+// initialize event listener
 randomize.addEventListener('click', result);
 
+/**
+ * 
+ */
 function result() {
+  // initialize String variables
+  let newStory = storyText;
+  let xItem = randomValueFromArray(insertX);
+  let yItem = randomValueFromArray(insertY);
+  let zItem = randomValueFromArray(insertZ);
+
+  // replace placeholders in newStory
+  newStory = newStory.replace(":insertx:", xItem);
+  newStory = newStory.replace(":inserty:", yItem);
+  newStory = newStory.replace(":insertz:", zItem);
+
 
   if(customName.value !== '') {
     const name = customName.value;
-
+    
   }
 
   if(document.getElementById("uk").checked) {
@@ -37,6 +51,6 @@ function result() {
 
   }
 
-  story.textContent = ;
+  story.textContent = newStory;
   story.style.visibility = 'visible';
 }
