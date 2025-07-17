@@ -1,4 +1,4 @@
-/* Declaring querySelector */
+/* Declaring querySelectors */
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
 
@@ -24,13 +24,26 @@ const imageAltText = [
 ]
 
 /* Looping through images */
+
+
 for (let i = 0; i < imageFileNames.length; i++) {
+    /**
+     * Displays chosen image
+     * @returns {void}
+     */
+    function findImage() {
+        displayedImage.setAttribute('src', newImage.src);
+        displayedImage.setAttribute('alt', newImage.alt);
+    }   
+    
+    // adds image(s) to thumb bar
     const newImage = document.createElement('img');
     newImage.setAttribute('src', imageFileNames[i]);
     newImage.setAttribute('alt', imageAltText[i]);
     thumbBar.appendChild(newImage);
+
+    // initialize event listener
+    newImage.addEventListener('click', findImage);
 }
-
-
 
 /* Wiring up the Darken/Lighten button */
