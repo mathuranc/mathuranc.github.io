@@ -1,7 +1,6 @@
 /* Declaring querySelectors */
 const displayedImage = document.querySelector('.displayed-img');
 const thumbBar = document.querySelector('.thumb-bar');
-
 const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
@@ -24,14 +23,12 @@ const imageAltText = [
 ]
 
 /* Looping through images */
-
-
 for (let i = 0; i < imageFileNames.length; i++) {
     /**
      * Displays chosen image
      * @returns {void}
      */
-    function findImage() {
+    function changeDisplayedImage() {
         displayedImage.setAttribute('src', newImage.src);
         displayedImage.setAttribute('alt', newImage.alt);
     }   
@@ -42,7 +39,7 @@ for (let i = 0; i < imageFileNames.length; i++) {
     newImage.setAttribute('alt', imageAltText[i]);
     thumbBar.appendChild(newImage);
 
-    // initialize event listener
+    // initialize event listener to change displayed image
     newImage.addEventListener('click', findImage);
 }
 
