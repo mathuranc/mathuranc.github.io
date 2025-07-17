@@ -44,20 +44,18 @@ for (let i = 0; i < imageFileNames.length; i++) {
 }
 
 /* Wiring up the Darken/Lighten button */
-const LIGHT_MODE = "light";
-const DARK_MODE = "dark";
 /**
  * Adds/removes darken effect on displayed
  * @returns {void}
  */
 function toggleOverlay() {
-    if (btn.getAttribute('class') == DARK_MODE) {
-        btn.setAttribute('class', LIGHT_MODE);
+    if (btn.getAttribute('class') == "dark") {
+        btn.setAttribute('class', "light");
         btn.textContent = "Lighten";
         overlay.style.backgroundColor = "rgb(0 0 0 / 50%)";
     }
-    else if (btn.getAttribute('class') == LIGHT_MODE) {
-        btn.setAttribute('class', DARK_MODE);
+    else if (btn.getAttribute('class') == "light") {
+        btn.setAttribute('class', "dark");
         btn.textContent = "Darken";
         overlay.style.backgroundColor = "rgb(0 0 0 / 0%)";
     }
