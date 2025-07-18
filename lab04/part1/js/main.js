@@ -1,19 +1,17 @@
-// initialize global variables
+// text field
 const customName = document.getElementById('customname');
+
+// query selectors
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
 
-/**
- * Returns random element from array
- * @param {Array} array - array from which to select random element
- * @returns {*} - randomly selected element from array
- */
+// returns random element from array
 function randomValueFromArray(array){
   const random = Math.floor(Math.random()*array.length);
   return array[random];
 }
 
-// initialize string input variables
+// initialize string variables of story
 let storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:," +
                 "they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was" + 
                 " not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
@@ -24,10 +22,7 @@ let insertZ = ["spontaneously combusted", "melted into a puddle on the sidewalk"
 // initialize event listener
 randomize.addEventListener('click', result);
 
-/**
- * Generates randomized story for user
- * @returns {void}
- */
+// generates randomized story for user
 function result() {
   // initialize String variables
   let newStory = storyText;
