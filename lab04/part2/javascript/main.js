@@ -23,16 +23,7 @@ const imageAltText = [
 ]
 
 /* Looping through images */
-for (let i = 0; i < imageFileNames.length; i++) {
-    /**
-     * Displays chosen image
-     * @returns {void}
-     */
-    function changeDisplayedImage() {
-        displayedImage.setAttribute('src', newImage.src);
-        displayedImage.setAttribute('alt', newImage.alt);
-    }   
-    
+for (let i = 0; i < imageFileNames.length; i++) {  
     // adds image(s) to thumb bar
     const newImage = document.createElement('img');
     newImage.setAttribute('src', imageFileNames[i]);
@@ -40,10 +31,13 @@ for (let i = 0; i < imageFileNames.length; i++) {
     thumbBar.appendChild(newImage);
 
     // initialize event listener to change displayed image
-    newImage.addEventListener('click', changeDisplayedImage);
+    newImage.addEventListener('click', () => {
+        displayedImage.setAttribute('src', newImage.src);
+        displayedImage.setAttribute('alt', newImage.alt);
+    });
 }
 
-/* Wiring up the Darken/Lighten button */
+/* Wiring up the Darken/Lighten button */   
 /**
  * Adds/removes darken effect on displayed
  * @returns {void}
