@@ -1,4 +1,4 @@
-// text field
+// 'Custom Name' text field
 const customName = document.getElementById('customname');
 
 // query selectors
@@ -45,11 +45,12 @@ function result() {
   if(document.getElementById("uk").checked) {
     // lbs to st
     const weight = Math.round(300/14) + ' stone';
-    newStory = newStory.replaceAll("94 fahrenheit", weight);
+    newStory = newStory.replaceAll("300 pounds", weight);
+    
 
     // °F to °C                  
     const temperature =  Math.round((94-32)*(5/9)) + ' centigrade';
-    newStory = newStory.replaceAll("300 pounds", temperature);
+    newStory = newStory.replaceAll("94 fahrenheit", temperature);
   }
 
   // output randomly generated story for user
