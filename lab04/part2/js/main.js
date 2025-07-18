@@ -38,10 +38,6 @@ for (let i = 0; i < imageFileNames.length; i++) {
 }
 
 /* Wiring up the Darken/Lighten button */   
-/**
- * Adds/removes darken effect on displayed
- * @returns {void}
- */
 function toggleOverlay() {
     if (btn.getAttribute('class') == "dark") {
         btn.setAttribute('class', "light");
