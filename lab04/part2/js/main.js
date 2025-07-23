@@ -18,11 +18,11 @@ const imageFileNames = [
 
 /* Declaring the alternative text for each image file */
 const imageAltText = {
-    imageFileNames[0] : "Close-up of blue human eye",
-    imageFileNames[1] : "Close-up of sedimentary rock formation",
-    imageFileNames[2] : "Close-up of purple and white flowers",
-    imageFileNames[3] : "Close-up of ancient Egyptian wall painting",
-    imageFileNames[4] : "Close-up of brown butterfly"
+    "pic1.jpg" : "Close-up of blue human eye",
+    "pic2.jpg" : "Close-up of sedimentary rock formation",
+    "pic3.jpg" : "Close-up of purple and white flowers",
+    "pic4.jpg" : "Close-up of ancient Egyptian wall painting",
+    "pic5.jpg" : "Close-up of brown butterfly"
 }
 
 /* Looping through images */
