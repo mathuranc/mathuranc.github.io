@@ -4,52 +4,52 @@ const thumbBar = document.querySelector('.thumb-bar');
 const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
+/* Declare source path for images */
+let imageSourcePath = "./images/"
+
 /* Declaring the array of image filenames */
 const imageFileNames = [
-    "./images/pic1.jpg", 
-    "./images/pic2.jpg",
-    "./images/pic3.jpg",          
-    "./images/pic4.jpg", 
-    "./images/pic5.jpg"
+    "pic1.jpg", 
+    "pic2.jpg",
+    "pic3.jpg",          
+    "pic4.jpg", 
+    "pic5.jpg"
 ]
 
 /* Declaring the alternative text for each image file */
-const imageAltText = [
-    "Close-up of blue human eye",
-    "Close-up of sedimentary rock formation",
-    "Close-up of purple and white flowers",
-    "Close-up of ancient Egyptian wall painting",
-    "Close-up of brown butterfly"
-]
+const imageAltText = {
+    imageFileNames[0] : "Close-up of blue human eye",
+    imageFileNames[1] : "Close-up of sedimentary rock formation",
+    imageFileNames[2] : "Close-up of purple and white flowers",
+    imageFileNames[3] : "Close-up of ancient Egyptian wall painting",
+    imageFileNames[4] : "Close-up of brown butterfly"
+}
 
 /* Looping through images */
-for (let i = 0; i < imageFileNames.length; i++) {  
+for (let imageSrc in imageAltText) {  
     // adds image(s) to thumb bar
     const newImage = document.createElement('img');
-    newImage.setAttribute('src', imageFileNames[i]);
-    newImage.setAttribute('alt', imageAltText[i]);
+    newImage.setAttribute('src', imageSourcePath + imageSrc);
+    newImage.setAttribute('alt', imageAltText.key);
     thumbBar.appendChild(newImage);
 
     // initialize event listener to change displayed image
-    newImage.addEventListener('click', () => {
-        displayedImage.setAttribute('src', newImage.src);
-        displayedImage.setAttribute('alt', newImage.alt);
+    newImage.addEventListener('click', function() {
+        displayedImage.setAttribute('src', this.src);
+        displayedImage.setAttribute('alt', this.alt);
     });
 }
 
-/* Wiring up the Darken/Lighten button */   
-function toggleOverlay() {
-    if (btn.getAttribute('class') == "dark") {
-        btn.setAttribute('class', "light");
-        btn.textContent = "Lighten";
+/* Wiring up the Darken/Lighten button */
+btn.addEventListener('click', function() {
+    if (this.getAttribute('class') == "dark") {
+        this.setAttribute('class', "light");
+        this.textContent = "Lighten";
         overlay.style.backgroundColor = "rgb(0 0 0 / 50%)";
     }
     else if (btn.getAttribute('class') == "light") {
-        btn.setAttribute('class', "dark");
-        btn.textContent = "Darken";
+        this.setAttribute('class', "dark");
+        this.textContent = "Darken";
         overlay.style.backgroundColor = "rgb(0 0 0 / 0%)";
     }
-}
-
-// initialize event listener to lighten/darken displayed image
-btn.addEventListener('click', toggleOverlay);
+});
