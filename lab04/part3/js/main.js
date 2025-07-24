@@ -42,6 +42,22 @@ class Ball {
     this.x += this.velX;
     this.y += this.velY;
   }
+
+  collisionDetect() {
+    for (const ball of balls) {
+      if (this !== ball) {
+        // checks if area overlaps b/w 2 balls
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx*dx + dy*dy)
+        
+        // collision detected
+        if (distance < this.size + ball.size) {
+          ball.color = this.color = randomRGB();
+        }
+      }
+    }
+  }
 }
 
 // setup canvas
@@ -97,6 +113,7 @@ function loop() {
   for (const ball of balls) {
     ball.draw();
     ball.update();
+    ball.collisionDetect();
   }
 
   // runs loop set amount of times for smooth animation
