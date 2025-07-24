@@ -14,8 +14,8 @@ class Ball {
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.createConicGradient(this.x, this.y, this.size, 0, 2*Math.PI);
+    ctx.fill();
   }
-  
 }
 
 // setup canvas
@@ -34,3 +34,10 @@ function random(min, max) {
 function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
+
+// create instance of Ball and call it's members
+const testBall = new Ball(50, 100, 4, 4, "blue", 10);
+testBall.x;
+testBall.size;
+testBall.color;
+testBall.draw();
