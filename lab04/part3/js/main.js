@@ -88,7 +88,7 @@ testBall.draw();
 const balls = [];
 
 while (balls.length < 25) {
-  const size = random(10, 10);
+  const size = random(10, 20);
   const ball = new Ball (
     // ball position always drawn at least one ball width
     // away from the edge of the canvas, to avoid drawing errors
@@ -106,7 +106,7 @@ while (balls.length < 25) {
 // generates animation
 function loop() {
   // sets canvas fill to semi-transparent black
-  ctx.fillStyle = "rgb(0 0 0 / 25%";
+  ctx.fillStyle = "rgb(0 0 0 / 25%)";
   ctx.fillRect(0, 0, width, height);
 
   // draws and updates each ball's position on screen
