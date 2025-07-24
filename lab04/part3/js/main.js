@@ -87,3 +87,20 @@ while (balls.length < 25) {
   balls.push(ball)
 }
 
+// generates animation
+function loop() {
+  // sets canvas fill to semi-transparent black
+  ctx.fillStyle = "rgb(0 0 0 / 25%";
+  ctx.fillRect(0, 0, width, height);
+
+  // draws and updates each ball's position on screen
+  for (const ball of balls) {
+    ball.draw();
+    ball.update();
+  }
+
+  // runs loop set amount of times for smooth animation
+  requestAnimationFrame(loop);
+}
+
+loop()
