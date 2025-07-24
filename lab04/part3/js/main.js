@@ -1,4 +1,5 @@
 class Ball {
+  /* ********** CONSTRUCTOR ********** */
   constructor(x, y, velX, velY, color, size) {
     this.x = x;
     this.y = y;
@@ -7,6 +8,14 @@ class Ball {
     this.color = color;
     this.size = size;
   }
+  
+  /* ********** MUTATORS ********** */
+  draw() {
+    ctx.beginPath();
+    ctx.fillStyle = this.color;
+    ctx.createConicGradient(this.x, this.y, this.size, 0, 2*Math.PI);
+  }
+  
 }
 
 // setup canvas
@@ -22,7 +31,6 @@ function random(min, max) {
 }
 
 // generates random color
-
 function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
