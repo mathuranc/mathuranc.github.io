@@ -89,6 +89,28 @@ class EvilCircle extends Shape {
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.fill();
   }
+
+  checkBounds() {
+    if (this.x + this.size >= width) {
+      this.x -= 1;
+      this.size -= 1;
+    }
+
+    if (this.x - this.size <= 0) {
+      this.x += 1;
+      this.size -= 1;
+    }
+
+    if (this.y + this.size >= height) {
+      this.y -= 1;
+      this.size -= 1;
+    }
+
+    if (this.y - this.size <= 0) {
+      this.y += 1;
+      this.size -= 1;
+    }
+  }
 }
 const balls = [];
 
