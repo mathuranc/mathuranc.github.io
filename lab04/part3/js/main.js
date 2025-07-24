@@ -16,6 +16,32 @@ class Ball {
     ctx.createConicGradient(this.x, this.y, this.size, 0, 2*Math.PI);
     ctx.fill();
   }
+
+  update() {
+    // exceeds right bounds
+    if (this.x + this.size >= width) {
+      this.velX = -this.velX;
+    }
+
+    // exceeds left bounds
+    if (this.x - this.size <= 0) {
+      this.velX = -this.velX;
+    }
+
+    // exceeds lower bounds
+    if (this.y + this.size >= height) {
+      this.velY = -this.velY;
+    }
+
+    // exceeds upper bounds
+    if (this.y - this.size <= 0) {
+      this.velY = -this.velY;
+    }
+
+    // update coordinates
+    this.x += this.velX;
+    this.y += this.velY;
+  }
 }
 
 // setup canvas
