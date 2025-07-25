@@ -90,25 +90,22 @@ class EvilCircle extends Shape {
     ctx.fill();
   }
 
+  //
   checkBounds() {
     if (this.x + this.size >= width) {
-      this.x -= 1;
-      this.size -= 1;
+      this.x -= this.size;
     }
 
     if (this.x - this.size <= 0) {
-      this.x += 1;
-      this.size -= 1;
+      this.x += this.size;
     }
 
     if (this.y + this.size >= height) {
-      this.y -= 1;
-      this.size -= 1;
+      this.y -= this.size;
     }
 
     if (this.y - this.size <= 0) {
-      this.y += 1;
-      this.size -= 1;
+      this.y += this.size;
     }
   }
 }
