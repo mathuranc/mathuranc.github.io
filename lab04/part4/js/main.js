@@ -124,6 +124,7 @@ class EvilCircle extends Shape {
 }
 
 const balls = [];
+const evilBall = new EvilCircle(0, 0);
 
 while (balls.length < 25) {
   const size = random(10, 20);
@@ -146,9 +147,15 @@ function loop() {
   ctx.fillRect(0, 0, width, height);
 
   for (const ball of balls) {
-    ball.draw();
-    ball.update();
-    ball.collisionDetect();
+    if (ball.exists) {  
+      ball.draw();
+      ball.update();
+      ball.collisionDetect();
+    }
+     
+    evilBall.draw();
+    evilBall.checkBounds();
+    evilBall.collisionDetect();
   }
 
   requestAnimationFrame(loop);
@@ -160,16 +167,16 @@ loop();
 window.addEventListener("keydown", e => {
   switch (e.key) {
     case "a":
-      this.x -= this.velX;
+      evilBall.x -= evilBall.velX;
       break;
     case "d":
-      this.x += this.velX;
+      evilBall.x += evilBall.velX;
       break;
     case "w":
-      this.y -= this.velY;
+      evilBall.y -= evilBall.velY;
       break;
     case "s":
-      this.y += this.velY;
+      evilBall.y += evilBall.velY;
       break;
   }
 });
