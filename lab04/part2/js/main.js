@@ -30,7 +30,7 @@ for (let imageSrc in imageAltText) {
     // adds image(s) to thumb bar
     const newImage = document.createElement('img');
     newImage.setAttribute('src', imageSourcePath + imageSrc);
-    newImage.setAttribute('alt', imageAltText.key);
+    newImage.setAttribute('alt', imageAltText[imageSrc]);
     thumbBar.appendChild(newImage);
 
     // initialize event listener to change displayed image
