@@ -5,14 +5,16 @@ const ctx = canvas.getContext("2d");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
+// track number of balls eaten
 const ballCount = document.querySelector('#ballCount');
+let ballEaten = 0;
 
-// function to generate random number
+// generates a random number b/w min and max
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// function to generate random RGB color value
+// generates random RGB color value
 function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
@@ -42,22 +44,27 @@ class Ball extends Shape {
   }
 
   update() {
+    // exceeds right bounds
     if (this.x + this.size >= width) {
       this.velX = -Math.abs(this.velX);
     }
 
+    // exceeds left bounds
     if (this.x - this.size <= 0) {
       this.velX = Math.abs(this.velX);
     }
 
+    // exceeds lower bounds
     if (this.y + this.size >= height) {
       this.velY = -Math.abs(this.velY);
     }
 
+    // exceeds upper bounds
     if (this.y - this.size <= 0) {
       this.velY = Math.abs(this.velY);
     }
 
+    // update coordinates
     this.x += this.velX;
     this.y += this.velY;
   }
@@ -65,10 +72,12 @@ class Ball extends Shape {
   collisionDetect() {
     for (const ball of balls) {
       if (!(this === ball) && ball.exists) {
+        // checks if area overlaps b/w 2 balls
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-
+        
+        // collision detected
         if (distance < this.size + ball.size) {
           ball.color = this.color = randomRGB();
         }
@@ -93,18 +102,22 @@ class EvilCircle extends Shape {
   }
 
   checkBounds() {
+    // exceeds right bounds
     if (this.x + this.size >= width) {
       this.x -= this.size;
     }
 
+    // exceeds left bounds
     if (this.x - this.size <= 0) {
       this.x += this.size;
     }
 
+    // exceeds lower lower bounds
     if (this.y + this.size >= height) {
       this.y -= this.size;
     }
 
+    // exceeds upper bounds
     if (this.y - this.size <= 0) {
       this.y += this.size;
     }
@@ -113,10 +126,12 @@ class EvilCircle extends Shape {
   collisionDetect() {
     for (const ball of balls) {
       if (ball.exists) {
+        // checks if area overlaps b/w ball and evilBall
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
 
+        // if collision detected, "eat" ball
         if (distance < this.size + ball.size) {
           ball.exists = false;
           ballEaten += 1;
@@ -127,15 +142,15 @@ class EvilCircle extends Shape {
   }
 }
 
-const balls = [];
+// user controlled object
 const evilBall = new EvilCircle(0, 0);
-let ballEaten = 0;
 
+// generate 25 balls with randomized size, colors, and initial coordinates
+const balls = [];
 while (balls.length < 25) {
   const size = random(10, 20);
   const ball = new Ball(
-    // ball position always drawn at least one ball width
-    // away from the edge of the canvas, to avoid drawing errors
+    // ensure ball is within canvas bounds
     random(0 + size, width - size),
     random(0 + size, height - size),
     random(-7, 7),
@@ -147,10 +162,13 @@ while (balls.length < 25) {
   balls.push(ball);
 }
 
+// generates animation
 function loop() {
+  // sets canvas fill to semi-transparent black
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
 
+  // draw and update each ball
   for (const ball of balls) {
     if (ball.exists) {  
       ball.draw();
@@ -158,29 +176,31 @@ function loop() {
       ball.collisionDetect();
     }
 
+    // draw and update evilBall
     evilBall.draw();
     evilBall.checkBounds();
     evilBall.collisionDetect();
   }
 
+  // request next animation frame
   requestAnimationFrame(loop);
 }
 
 loop();
 
-// lets user control evil circle via WASD
+// enables movement of evilBall using WASD keys
 window.addEventListener("keydown", e => {
   switch (e.key) {
-    case "a":
+    case "a":   // move left
       evilBall.x -= evilBall.velX;
       break;
-    case "d":
+    case "d":   // move right
       evilBall.x += evilBall.velX;
       break;
-    case "w":
+    case "w":   // move up
       evilBall.y -= evilBall.velY;
       break;
-    case "s":
+    case "s":   // move down
       evilBall.y += evilBall.velY;
       break;
   }
