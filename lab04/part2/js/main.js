@@ -18,7 +18,7 @@ const imageFileNames = [
 
 /* Declaring the alternative text for each image file */
 const imageAltText = {
-    "pic1.jpg" : "Close-up of blue human eye",
+    "pic1.jpg" : "Close-up of a human eye",
     "pic2.jpg" : "Close-up of sedimentary rock formation",
     "pic3.jpg" : "Close-up of purple and white flowers",
     "pic4.jpg" : "Close-up of ancient Egyptian wall painting",
@@ -26,14 +26,16 @@ const imageAltText = {
 }
 
 /* Looping through images */
-for (let imageSrc in imageAltText) {  
-    // adds image(s) to thumb bar
+for (let i = 1; i <= imageFileNames.length; i++) {
+    const imageSrc = `pic${i}.jpg`;
     const newImage = document.createElement('img');
+
+    // add images to thumb bar
     newImage.setAttribute('src', imageSourcePath + imageSrc);
     newImage.setAttribute('alt', imageAltText[imageSrc]);
     thumbBar.appendChild(newImage);
 
-    // initialize event listener to change displayed image
+    // event listener to change displayed image
     newImage.addEventListener('click', function() {
         displayedImage.setAttribute('src', this.src);
         displayedImage.setAttribute('alt', this.alt);
