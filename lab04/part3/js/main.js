@@ -18,23 +18,17 @@ class Ball {
   }
 
   update() {
-    // exceeds right bounds
-    if (this.x + this.size >= width) {
+    // keeps ball within canvas bounds
+    if (this.x + this.size >= width) {    // exceeds right bounds
       this.velX = -this.velX;
     }
-
-    // exceeds left bounds
-    if (this.x - this.size <= 0) {
+    if (this.x - this.size <= 0) {        // exceeds left bounds
       this.velX = -this.velX;
     }
-
-    // exceeds lower bounds
-    if (this.y + this.size >= height) {
+    if (this.y + this.size >= height) {   // exceeds lower bounds
       this.velY = -this.velY;
     }
-
-    // exceeds upper bounds
-    if (this.y - this.size <= 0) {
+    if (this.y - this.size <= 0) {        // exceeds upper bounds
       this.velY = -this.velY;
     }
 
@@ -109,14 +103,14 @@ function loop() {
   ctx.fillStyle = "rgb(0 0 0 / 25%)";
   ctx.fillRect(0, 0, width, height);
 
-  // draws and updates each ball's position on screen
+  // draw and update each ball
   for (const ball of balls) {
     ball.draw();
     ball.update();
     ball.collisionDetect();
   }
 
-  // runs loop set amount of times for smooth animation
+  // request next animation frame
   requestAnimationFrame(loop);
 }
 
