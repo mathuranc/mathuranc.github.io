@@ -5,7 +5,7 @@ const commentWrapper = document.querySelector('.comment-wrapper');
 
 commentWrapper.style.display = 'none';
 
-showHideBtn.onclick = function() {
+function showHideCommentBar() {
   let showHideText = showHideBtn.textContent;
   if(showHideText === 'Show comments') {
     showHideBtn.textContent = 'Hide comments';
@@ -45,3 +45,6 @@ function submitComment() {
   nameField.value = '';
   commentField.value = '';
 }
+
+showHideBtn.addEventListener('click', showHideCommentBar);
+showHideBtn.addEventListener('keydown', showHideCommentBar);
